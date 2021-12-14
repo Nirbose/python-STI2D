@@ -1,17 +1,17 @@
 from tkinter import *
+from v2.components import *
 
-# Génération de la fenêtre
-window = Tk(screenName="Conversion GUI")
-window.geometry("500x250") # Taille de la fenêtre
+window = Tk(screenName="Conversion GUI") # Librairies
+window.geometry("500x250") # Dimention
 window.title("Conversion Multi-bases") # Titre de la fenêtre
 
-# Sauvegarde des variables pour les Radiobutton
 a = IntVar()
 b = IntVar()
 
-bases = [2, 10, 16] # Stockage des bases
+view = Components() # Truc sympa pour que cela soit propre
 
-# Fonction de convertion
+bases = [2, 10, 16] # Stockage des bases
+    
 def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]):
 	number = entry.get()
 	base = bases[a.get()]
@@ -46,23 +46,21 @@ def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D",
 	
 	label['text'] = f"Le résultat est : {nbOut}"
 
-# Components :
-Label(text="Nombre a convertir :").pack()
-entry = Entry()
-entry.pack()
+# View :
+view.label("Nombre a convertir :")
+entry = view.input()
+view.radio(text="Binaire", value=0, variable=a)
+view.radio(text="Decimal", value=1, variable=a)
+view.radio(text="Hexa", value=2, variable=a)
 
-Radiobutton(text="Binaire", value=0, variable=b).pack()
-Radiobutton(text="Decimal", value=1, variable=b).pack()
-Radiobutton(text="Hexa", value=2, variable=b).pack()
+view.label("Conversion vers :")
+view.radio("Binaire", 0, b)
+view.radio("Decimal", 1, b)
+view.radio("Hexa", 2, b)
 
-Label(text="Conversion vers :").pack()
-Radiobutton(text="Binaire", value=0, variable=b).pack()
-Radiobutton(text="Decimal", value=1, variable=b).pack()
-Radiobutton(text="Hexa", value=2, variable=b).pack()
+view.btn("Convertir", convB1ToB2)
 
-Button(text="Convertir", command=convB1ToB2).pack()
+label = view.label("Le résultat est : rien pour l'instant")
 
-label = Label(text="Le résultat est : rien pour l'instant")
-label.pack()
 
 window.mainloop()
