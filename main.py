@@ -11,15 +11,6 @@ b = IntVar()
 view = Components() # Truc sympa pour que cela soit propre
 
 bases = [2, 10, 16] # Stockage des bases
-
-def conversion():
-    # Calcule de conversion
-    pass
-
-def render():
-    # Rendu sur la fenêtre
-    print(a.get())
-    print(b.get())
     
 def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]):
 	number = entry.get()
@@ -55,6 +46,7 @@ def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D",
 	
 	label['text'] = f"Le résultat est : {nbOut}"
 
+# View :
 view.label("Nombre a convertir :")
 entry = view.input()
 view.radio(text="Binaire", value=0, variable=a)
@@ -69,5 +61,6 @@ view.radio("Hexa", 2, b)
 view.btn("Convertir", convB1ToB2)
 
 label = view.label("Le résultat est : rien pour l'instant")
+
 
 window.mainloop()

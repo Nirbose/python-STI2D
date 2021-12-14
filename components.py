@@ -1,6 +1,7 @@
 from tkinter import *
 
 class Components:
+    
     def label(self, text):
         label = Label(text=text)
         label.pack()
