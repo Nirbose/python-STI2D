@@ -17,9 +17,6 @@ def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D",
 	base = bases[a.get()]
 	baseOut = bases[b.get()]
 
-	if base <= 1 or baseOut <= 1 :
-		return "Error : base cannot be less than 1"
-
 	nb = 0
 	nbOut = ""
 	indice = 0
