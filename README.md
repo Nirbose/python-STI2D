@@ -52,6 +52,6 @@ def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D",
 Nous finissons par l'affichage.
 
 ## Execution du code
-Télécharger le ZIP (ici)[https://github.com/Nirbose/python-STI2D/archive/refs/heads/main.zip]!
+Télécharger le ZIP (https://github.com/Nirbose/python-STI2D/archive/refs/heads/main.zip)[ici]!
 
 Pour l'executer il vous faut taper la commande `py main.py` ou clicker sur `F5` si votre IDE le supporte.
