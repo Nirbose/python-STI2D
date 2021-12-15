@@ -11,6 +11,15 @@ b = IntVar()
 
 bases = [2, 10, 16] # Stockage des bases
 
+Fleft = Frame(window)
+Fleft.pack(side=LEFT)
+
+Frigth = Frame(window)
+Frigth.pack(side=RIGHT)
+
+Fbottom = Frame(window)
+Fbottom.pack(side=BOTTOM)
+
 # Fonction de convertion
 def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]):
 	number = entry.get()
@@ -40,7 +49,7 @@ def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D",
 		else :
 			nbOut += "0"
 		indice -= 1
-	
+
 	label['text'] = f"Le résultat est : {nbOut}"
 
 # Components :
@@ -48,16 +57,17 @@ Label(text="Nombre a convertir :").pack()
 entry = Entry()
 entry.pack()
 
-Radiobutton(text="Binaire", value=0, variable=a).pack()
-Radiobutton(text="Decimal", value=1, variable=a).pack()
-Radiobutton(text="Hexa", value=2, variable=a).pack()
+Label(Fleft, text="Base de depart").pack()
+Radiobutton(Fleft, text="Binaire", value=0, variable=a).pack()
+Radiobutton(Fleft, text="Decimal", value=1, variable=a).pack()
+Radiobutton(Fleft, text="Hexa", value=2, variable=a).pack()
 
-Label(text="Conversion vers :").pack()
-Radiobutton(text="Binaire", value=0, variable=b).pack()
-Radiobutton(text="Decimal", value=1, variable=b).pack()
-Radiobutton(text="Hexa", value=2, variable=b).pack()
+Label(Frigth, text="Base d'arrivee").pack()
+Radiobutton(Frigth, text="Binaire", value=0, variable=b).pack()
+Radiobutton(Frigth, text="Decimal", value=1, variable=b).pack()
+Radiobutton(Frigth, text="Hexa", value=2, variable=b).pack()
 
-Button(text="Convertir", command=convB1ToB2).pack()
+Button(Fbottom, text="Convertir", command=convB1ToB2).pack()
 
 label = Label(text="Le résultat est : rien pour l'instant")
 label.pack()
