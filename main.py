@@ -48,9 +48,9 @@ Label(text="Nombre a convertir :").pack()
 entry = Entry()
 entry.pack()
 
-Radiobutton(text="Binaire", value=0, variable=b).pack()
-Radiobutton(text="Decimal", value=1, variable=b).pack()
-Radiobutton(text="Hexa", value=2, variable=b).pack()
+Radiobutton(text="Binaire", value=0, variable=a).pack()
+Radiobutton(text="Decimal", value=1, variable=a).pack()
+Radiobutton(text="Hexa", value=2, variable=a).pack()
 
 Label(text="Conversion vers :").pack()
 Radiobutton(text="Binaire", value=0, variable=b).pack()
