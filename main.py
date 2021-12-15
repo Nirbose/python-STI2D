@@ -11,6 +11,7 @@ b = IntVar()
 
 bases = [2, 10, 16] # Stockage des bases
 
+# Frame espaces
 Fleft = Frame(window)
 Fleft.pack(side=LEFT)
 
@@ -58,16 +59,17 @@ entry = Entry()
 entry.pack()
 
 Label(Fleft, text="Base de depart").pack()
-Radiobutton(Fleft, text="Binaire", value=0, variable=a).pack()
-Radiobutton(Fleft, text="Decimal", value=1, variable=a).pack()
-Radiobutton(Fleft, text="Hexa", value=2, variable=a).pack()
+Radiobutton(Fleft, text="Binaire", value=0, variable=a, indicator = 0, width=15).pack()
+Radiobutton(Fleft, text="Decimal", value=1, variable=a, indicator = 0, width=15).pack()
+Radiobutton(Fleft, text="Hexa", value=2, variable=a, indicator = 0, width=15).pack()
 
 Label(Frigth, text="Base d'arrivee").pack()
-Radiobutton(Frigth, text="Binaire", value=0, variable=b).pack()
-Radiobutton(Frigth, text="Decimal", value=1, variable=b).pack()
-Radiobutton(Frigth, text="Hexa", value=2, variable=b).pack()
+Radiobutton(Frigth, text="Binaire", value=0, variable=b, indicator = 0, width=15).pack()
+Radiobutton(Frigth, text="Decimal", value=1, variable=b, indicator = 0, width=15).pack()
+Radiobutton(Frigth, text="Hexa", value=2, variable=b, indicator = 0, width=15).pack()
 
-Button(Fbottom, text="Convertir", command=convB1ToB2).pack()
+Button(Fbottom, text="Convertir", command=convB1ToB2, width=25).pack()
+Button(Fbottom, text="EXIT", foreground="red", command=window.destroy, width=25).pack()
 
 label = Label(text="Le résultat est : rien pour l'instant")
 label.pack()
