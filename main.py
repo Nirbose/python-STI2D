@@ -22,36 +22,16 @@ Fbottom = Frame(window)
 Fbottom.pack(side=BOTTOM)
 
 # Fonction de convertion
-def convB1ToB2(carac = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"]):
-	number = entry.get()
-	base = bases[a.get()]
-	baseOut = bases[b.get()]
+def convB1ToB2():
+    nbOut = int(str(entry.get()), bases[a.get()])
 
-	nb = 0
-	nbOut = ""
-	indice = 0
+    if bases[b.get()] == 2:
+        nbOut = bin(nbOut)[2:]
 
-	for i in range(0,len(number)):
+    elif bases[b.get()] == 16:
+        nbOut = hex(nbOut)[2:]
 
-		indice -= 1
-		for i in range(0, len(carac)):
-			if number[indice] == carac[i] or carac[i] == carac[base-1]:
-				nb += i*(base**((indice+1)*-1))
-				break
-
-	indice = 0
-	while nb // baseOut**indice >= baseOut :
-		indice += 1
-
-	while indice != -1 :
-		if nb//baseOut**indice <= baseOut :
-			nbOut += str(carac[nb//baseOut**indice])
-			nb -= baseOut**indice*(nb//baseOut**indice)
-		else :
-			nbOut += "0"
-		indice -= 1
-
-	label['text'] = f"Le résultat est : {nbOut}"
+    label['text'] = f"Le résultat est : {nbOut}"
 
 # Components :
 Label(text="Nombre a convertir :").pack()
